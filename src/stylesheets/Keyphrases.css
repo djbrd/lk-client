@@ -1,0 +1,10 @@
+.keyphrase {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.sponsor {
+    border-style: solid;
+    padding: 1%;
+    display: inline-block;
+}

@@ -1,0 +1,18 @@
+{
+  "prompt":
+    {
+      "id": 1,
+      "artist": "Nadia Rose",
+      "title": "Skwod",
+      "videoId": "Ns_0zp00UQk",
+      "start": 40,
+      "end": 58,
+      "keywords": [
+        "team", "squad", "chat", "bad", "higher", "block", "nobody"
+      ],
+      "keyphrase": "Here to sell",
+      "sponsor": "adidas",
+      "error": null,
+      "requested": false
+    }
+}

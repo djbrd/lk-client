@@ -1,0 +1,147 @@
+@font-face {
+    font-family: BoB;
+    src: url(BoB.ttf);
+}
+
+body {
+    font-family: 'Anonymous Pro', monospace;
+}
+
+.page-header {
+    background-color: #000000;
+}
+
+.page-header h1 {
+    color: white;
+    font-family: BoB;
+    font-size: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+@media only screen and (min-width: 576px) {
+    .page-header h1 {
+        padding-top: 4rem;
+        text-align: right;
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .page-header h1 {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .page-header h1 {
+        text-align: left;
+        font-size: 3rem;
+    }
+}
+
+#progress-section {
+    font-size: .8rem;
+}
+
+#rhyme-form-header {
+    padding-bottom: 2%;
+}
+
+#rhyme-text-area {
+    height: 16rem;
+    max-width: 640px;
+}
+
+#logo {
+    width: 90px;
+    height: auto;
+}
+
+@media only screen and (min-width: 576px) {
+    #logo {
+        margin-left: -2rem;
+        width: auto;
+    }
+}
+
+#video-section {
+    margin-left: 1.5%;
+}
+
+#video-section > .row {
+    padding-top: 2%;
+}
+
+#input-section {
+    padding-bottom: 2%;
+}
+
+#analysed-section {
+    padding-left: 2%;
+}
+
+#reward-section {
+    padding-left: 2%;
+    padding-bottom: 3%;
+}
+
+#reward-section > .row {
+    padding-top: 2%;
+}
+
+#page-footer {
+    margin-top: 10%;
+}
+
+.score {
+    padding-bottom: 2%;
+}
+
+.rhyme {
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+footer {
+    background: black;
+    color: white;
+    margin-top: 100%;
+}
+
+.keyword {
+    font-weight: bold;
+}
+
+.keyphrase {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.adidas {
+    border-style: solid;
+    padding: 1%;
+}
+
+#congratulations-section {
+    padding: 3% 0% 2% 2%;
+}
+
+#voucher-section {
+    position: relative;
+    width: 500px;
+    height: 500px;
+}
+
+#voucher_msg {
+    position: absolute;
+    top: 226px;
+    left: 102px;
+    width: 314px;
+    padding: 22px 40px 22px 40px;
+    font-size: 1.5rem;
+    text-align: center;
+    background: black;
+    color: white;
+}
+
