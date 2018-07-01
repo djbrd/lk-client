@@ -2,7 +2,6 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { prompt, rhyme, analysed } from './reducers'
 import thunk from 'redux-thunk'
 import logger from 'redux-logger'
-import stateData from '../data/initialState'
 import { reducer as formReducer } from 'redux-form'
 import AT from '../actions/types'
 

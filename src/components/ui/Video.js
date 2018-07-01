@@ -27,30 +27,23 @@ class Video extends React.Component {
         return (
             <Row>
                 <Youtube
-                videoId={videoId}
-                opts={opts}
-                onReady={this._onReady.bind(this)}
+                    videoId={videoId}
+                    opts={opts}
+                    onReady={this._onReady.bind(this)}
                 />
             </Row>
         )
     }
 
-    componentWillUnmount() {
-        clearTimeout(this.timeout)
-        if (this.player) {
-            this.player.stopVideo()
-        }
-    }
-
     _onReady(event) {
         this.player = event.target
-        this.timeout = setTimeout(this._onTimeout.bind(this), 5000)
+        this.timeout = setTimeout(this._onTimeout.bind(this), 1000)
     }
 
     _onTimeout() {
         if (this.player.getPlayerState() === 5) {
             console.log('Playing video')
-            //this.player.playVideo()
+            this.player.playVideo()
         }
     }
 }

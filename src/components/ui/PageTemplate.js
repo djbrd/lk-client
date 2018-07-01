@@ -40,7 +40,7 @@ const PageTemplate = ({ children }) =>
                 <Container className="text-center text-md-left">
                     <Row>
                         <Col md="6">
-                            <h5 class="text-uppercase">TODO: </h5>
+                            <h5 className="text-uppercase">TODO: </h5>
                             <p>A list of nice stuff</p>
                         </Col>
                         <Col md="6">

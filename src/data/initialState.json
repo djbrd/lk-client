@@ -1,18 +1,42 @@
 {
-  "prompt":
+  "prompts": [
     {
       "id": 1,
-      "artist": "Nadia Rose",
+      "artists": [
+        {
+          "name": "Nadia Rose"
+        }
+      ],
       "title": "Skwod",
-      "videoId": "Ns_0zp00UQk",
+      "video_id": "Ns_0zp00UQk",
       "start": 40,
       "end": 58,
-      "keywords": [
-        "team", "squad", "chat", "bad", "higher", "block", "nobody"
+      "keywords": "team, squad, chat, bad, higher, block, nobody",
+      "keyphrase": {
+        "sponsor": "adidas",
+        "phrase": "Here to sell"
+      },
+      "error": null,
+      "requested": false
+    },
+    {
+      "id": 2,
+      "artists": [
+        {
+          "name": "Stormzy"
+        }
       ],
-      "keyphrase": "Here to sell",
-      "sponsor": "adidas",
+      "title": "Shut up",
+      "video_id": "RqQGUJK7Na4",
+      "start": 54,
+      "end": 69,
+      "keywords": "home, pay, party, champagne",
+      "keyphrase": {
+        "sponsor": "Nike",
+        "phrase": "There to fly"
+      },
       "error": null,
       "requested": false
     }
+  ]
 }

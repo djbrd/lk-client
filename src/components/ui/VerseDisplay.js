@@ -2,7 +2,7 @@ import React from 'react'
 import VerseOptions from './VerseOptions'
 import VerseFilter from '../containers/VerseFilter'
 
-const VerseDisplay = ({}) =>
+const VerseDisplay = () =>
     <div>
         <VerseOptions/>
         <VerseFilter/>

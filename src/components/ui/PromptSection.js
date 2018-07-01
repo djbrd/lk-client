@@ -16,16 +16,16 @@ class PromptSection extends React.Component {
             return (
                 <div>
                     <Instructions/>
-                    <Video videoId={prompt.videoId} start={prompt.start} end={prompt.end}/>
+                    <Video videoId={prompt.video_id} start={prompt.start} end={prompt.end}/>
                     <Keywords keywords={prompt.keywords}/>
-                    <Keyphrases keyphrase={prompt.keyphrase} sponsor={prompt.sponsor}/>
-                    <Row><Button onClick={() => onRequestPrompt(1)}>Load Prompt</Button></Row>
+                    <Keyphrases keyphrase={prompt.keyphrase}/>
+                    <Row><Button onClick={onRequestPrompt}>Load Prompt</Button></Row>
                 </div>
             )
         } else {
             return (
                 <div>
-                    <Row><Button onClick={() => onRequestPrompt(1)}>Load Prompt</Button></Row>
+                    <Row><Button onClick={onRequestPrompt}>Load Prompt</Button></Row>
                 </div>
             )
         }

@@ -1,10 +1,15 @@
 import AT from './types'
 
-const API_URL = 'http://localhost:8000/proto/'
+import stateData from '../data/initialState'
 
-export const fetchPrompt = (id) => (dispatch) => {
-    dispatch({ type: AT.FETCH_PROMPT_REQUEST, id: id })
-    return fetch(API_URL + 'prompt')
+const API_URL = 'http://localhost:8000/'
+
+var index = 0
+
+export const fetchPrompt = () => (dispatch) => {
+    dispatch({ type: AT.FETCH_PROMPT_REQUEST})
+    //dispatch({ type: AT.FETCH_PROMPT_SUCCESS, prompt: stateData.prompts[++index%2] })
+    return fetch(API_URL + 'subprompt')
         .then(response => response.json())
         .then(json => dispatch({ type: AT.FETCH_PROMPT_SUCCESS, prompt: json}))
         .catch(err => dispatch({ type: AT.FETCH_PROMPT_FAILURE, error: err}))

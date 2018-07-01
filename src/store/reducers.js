@@ -1,5 +1,6 @@
 import AT from '../actions/types'
-import { initialData, activeRhymes, maxRhymeLength } from "../lib/analysed";
+import { initialData, activeRhymes, maxRhymeLength } from "../lib/analysed"
+//import stateData from '../data/initialState'
 
 export const prompt = (state = { requested: false, error: '' }, action={ type: null }) => {
     switch (action.type) {

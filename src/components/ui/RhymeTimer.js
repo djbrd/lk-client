@@ -30,7 +30,7 @@ class RhymeTimer extends React.Component {
         let diff = (latest - startTime) / 1000;
         let diff_minutes = Math.round(diff/60);
         let diff_seconds = Math.round(diff%60);
-        diff_seconds = diff_seconds < 10 ? '0' + parseInt(diff_seconds) : parseInt(diff_seconds);
+        diff_seconds = diff_seconds < 10 ? '0' + parseInt(diff_seconds, 10) : parseInt(diff_seconds, 10);
 
         return <div>Elapsed time <span>{diff_minutes}:{diff_seconds}</span></div>
     }
