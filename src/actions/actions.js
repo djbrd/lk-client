@@ -1,14 +1,8 @@
 import AT from './types'
-
-import stateData from '../data/initialState'
-
-const API_URL = 'http://localhost:8000/'
-
-var index = 0
+const API_URL = process.env.REACT_APP_API_URL
 
 export const fetchPrompt = () => (dispatch) => {
     dispatch({ type: AT.FETCH_PROMPT_REQUEST})
-    //dispatch({ type: AT.FETCH_PROMPT_SUCCESS, prompt: stateData.prompts[++index%2] })
     return fetch(API_URL + 'subprompt')
         .then(response => response.json())
         .then(json => dispatch({ type: AT.FETCH_PROMPT_SUCCESS, prompt: json}))
