@@ -9,20 +9,24 @@ export const fetchPrompt = () => (dispatch) => {
         .catch(err => dispatch({ type: AT.FETCH_PROMPT_FAILURE, error: err}))
 }
 
-export const submitRhyme = (values) => (dispatch) => {
+export const submitRhyme = (values) => (dispatch, getState) => {
     dispatch({ type: AT.POST_RHYME_REQUEST})
 
     let formData = new FormData()
     for (var key in values) {
         formData.append(key, values[key])
     }
+
+    const {prompt} = getState();
     return fetch(API_URL + 'analyse',
         {
             method: "POST",
             body: formData
         })
         .then(response => response.json())
-        .then(json => dispatch({ type: AT.POST_RHYME_SUCCESS, analysed: json}))
+        .then(json => {
+            dispatch({ type: AT.POST_RHYME_SUCCESS, analysed: json, prompt})
+        })
         .catch(err => dispatch({ type: AT.POST_RHYME_FAILURE, error: err}))
 }
 

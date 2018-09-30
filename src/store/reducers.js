@@ -1,5 +1,9 @@
 import AT from '../actions/types'
-import { initialData, activeRhymes, maxRhymeLength } from "../lib/analysed"
+import {
+    initialData,
+    analysedScore,
+    activeRhymes,
+    maxRhymeLength } from "../lib/analysed"
 //import stateData from '../data/initialState'
 
 export const prompt = (state = { requested: false, error: '' }, action={ type: null }) => {
@@ -76,10 +80,12 @@ export const analysed = (state = {}, action={ type: null }) => {
             return {}
         case AT.POST_RHYME_SUCCESS: {
             let data = initialData(action.analysed)
-            let display = analysedDisplay({ data: data }, action)
+            let score = analysedScore(data, action.prompt)
+            let display = analysedDisplay({ data }, action)
             return {
-                data: data,
-                display: display,
+                data,
+                display,
+                score,
                 activeRhymes: activeRhymes(data, display)
             }
         }
@@ -88,7 +94,7 @@ export const analysed = (state = {}, action={ type: null }) => {
         case AT.ANALYSED_OPTIONS_COLOR: {
             let display = analysedDisplay(state.display, action)
             return {
-                data: state.data,
+                ...state,
                 display: display,
                 activeRhymes: activeRhymes(state.data, display)
             }

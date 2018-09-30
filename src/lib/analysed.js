@@ -20,6 +20,17 @@ export const initialData = ({ original_text, phonemes, rhymes }) => {
     }
 }
 
+export const analysedScore = ({rhymes, original_text}, {keywords, keyphrase}) => {
+    const loweredOriginal = original_text.toLowerCase();
+    const usedKeywords = keywords.split(', ').filter(word => loweredOriginal.indexOf(word) > -1);
+
+    return {
+        rhymes: rhymes.length,
+        keywords: usedKeywords.length,
+        keyphrase: loweredOriginal.replace(/\n/g, " ").indexOf(keyphrase.phrase.toLowerCase()) > -1
+    }
+}
+
 export const maxRhymeLength = ({ data }) => {
     const { rhymes } = data
     return rhymes.reduce((max, rhyme) => {
