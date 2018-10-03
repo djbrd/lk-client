@@ -13,6 +13,7 @@ const reducers = {
     form: formReducer.plugin({
         rhyme: (state, action) => {
             switch(action.type) {
+                case AT.FETCH_PROMPT_REQUEST:
                 case AT.POST_RHYME_SUCCESS:
                     return undefined
                 default:

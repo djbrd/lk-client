@@ -1,9 +1,10 @@
 import React from 'react'
 import VerseSpan from '../containers/VerseSpan'
+import { Row } from 'reactstrap';
 
 const VerseLine = ({ line, rhyme=null }) =>
     // Loop through spans and create a VerseSpan element for each one
-    <div>
+    <div className='verseLine'>
         { rhyme && rhyme.lines[0] === line && line.id !== 0 ? '...' : null }
         { line.spans.map((span, i) =>
             <VerseSpan key={i} span={span} rhyme={rhyme}/>

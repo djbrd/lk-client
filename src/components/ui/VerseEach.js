@@ -1,5 +1,6 @@
 import React from 'react'
 import VerseOne from './VerseOne'
+import { Row } from 'reactstrap';
 
 const VerseEach = ({ activeRhymes }) =>
     <div>

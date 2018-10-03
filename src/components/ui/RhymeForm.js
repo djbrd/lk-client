@@ -1,5 +1,6 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
+import { Button } from 'reactstrap'
 
 const formStyle = {
     width: '100%'
@@ -24,12 +25,12 @@ let RhymeForm = ({ handleSubmit, pristine, reset, submitting }) => {
                />
             </div>
             <div>
-                <button type="submit" disabled={ pristine || submitting}>
+                <Button type="submit" disabled={ pristine || submitting}>
                     Shoot
-                </button>
-                <button type="button" disabled={pristine || submitting} onClick={reset}>
+                </Button>
+                <Button type="button" disabled={pristine || submitting} onClick={reset}>
                     Clear Values
-                </button>
+                </Button>
             </div>
         </form>
     )

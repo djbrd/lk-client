@@ -6,6 +6,10 @@ import Video from "./Video";
 import { Button, Row } from "reactstrap"
 
 class PromptSection extends React.Component {
+    componentDidMount() {
+        this.props.onRequestPrompt();
+    }
+
     render() {
         const { prompt, onRequestPrompt } = this.props
         if (prompt.requested) {
@@ -19,15 +23,11 @@ class PromptSection extends React.Component {
                     <Video videoId={prompt.video_id} start={prompt.start} end={prompt.end}/>
                     <Keywords keywords={prompt.keywords}/>
                     <Keyphrases keyphrase={prompt.keyphrase}/>
-                    <Row><Button onClick={onRequestPrompt}>Load Prompt</Button></Row>
+                    <Row><Button disabled={prompt.disabled} onClick={onRequestPrompt}>Skip</Button></Row>
                 </div>
             )
         } else {
-            return (
-                <div>
-                    <Row><Button onClick={onRequestPrompt}>Load Prompt</Button></Row>
-                </div>
-            )
+            return null;
         }
 
     }

@@ -43,7 +43,7 @@ class Video extends React.Component {
     _onTimeout() {
         if (this.player.getPlayerState() === 5) {
             console.log('Playing video')
-            this.player.playVideo()
+            //this.player.playVideo()
         }
     }
 }

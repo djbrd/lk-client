@@ -1,8 +1,9 @@
 import React from 'react'
 import VerseLine from './VerseLine'
+import { Row } from 'reactstrap';
 
 const VerseOne = ({ rhyme }) =>
-    <div>
+    <Row className='verseFragment'>
         {rhyme.lines.map((line, i) =>
             <VerseLine
                 key={i}
@@ -10,6 +11,6 @@ const VerseOne = ({ rhyme }) =>
                 rhyme={rhyme}
             />
         )}
-    </div>
+    </Row>
 
 export default VerseOne

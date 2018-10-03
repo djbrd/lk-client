@@ -5,6 +5,7 @@ import VerseScore from '../containers/VerseScore';
 import VerseDisplay from "./VerseDisplay"
 import { Link } from 'react-router-dom'
 import { Button } from 'reactstrap'
+import { Row } from 'reactstrap'
 
 class AnalysedSection extends React.Component {
     render() {
@@ -15,9 +16,11 @@ class AnalysedSection extends React.Component {
                     <VerseDisplay/>
                     { analysed.display.options.together ? <VerseAll/> : <VerseEach/> }
                     <VerseScore/>
-                    <Link to='/reward'>
-                        <Button color='secondary'>Collect your reward</Button>
-                    </Link>
+                    <Row>
+                        <Link to='/reward'>
+                            <Button color='secondary'>Collect your reward</Button>
+                        </Link>
+                    </Row>
                 </div>
             )
         } else {

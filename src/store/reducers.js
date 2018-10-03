@@ -6,33 +6,52 @@ import {
     maxRhymeLength } from "../lib/analysed"
 //import stateData from '../data/initialState'
 
-export const prompt = (state = { requested: false, error: '' }, action={ type: null }) => {
+export const prompt = (state = { requested: false, disabled: false, error: '' }, action={ type: null }) => {
     switch (action.type) {
         case AT.FETCH_PROMPT_REQUEST:
             return {
                 id: action.id,
+                disabled: true,
                 requested: true,
                 error: ''
             }
         case AT.FETCH_PROMPT_SUCCESS:
             return {
                 ...action.prompt,
+                disabled: false,
                 requested: false,
                 error: ''
             }
         case AT.FETCH_PROMPT_FAILURE:
             return {
+                disabled: false,
                 error: action.error,
                 requested: false
+            }
+        case AT.POST_RHYME_REQUEST:
+            return {
+                ...state,
+                disabled: true
+            }
+        case AT.POST_RHYME_FAILURE:
+        case AT.POST_RHYME_SUCCESS:
+            return {
+                ...state,
+                disabled: false
             }
         default:
             return state
     }
 }
 
+const initialRhymeState = { startTime: 0, endTime: 0, editing: true, requested: false, error: ''};
 
-export const rhyme = (state = { startTime: 0, endTime: 0, editing: true, requested: false, error: ''}, action={ type: null }) => {
+export const rhyme = (state = initialRhymeState, action={ type: null }) => {
     switch (action.type) {
+        case AT.FETCH_PROMPT_REQUEST:
+            return {
+                ...initialRhymeState
+            };
         case "@@redux-form/CHANGE":
             let startTime = state.startTime
             let endTime = state.endTime

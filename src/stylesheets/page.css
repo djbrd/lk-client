@@ -46,3 +46,11 @@ body {
         width: auto;
     }
 }
+
+.row {
+    margin: 10px 0px;
+}
+
+.verseFragment, .verseScore {
+    flex-direction: column;
+}
